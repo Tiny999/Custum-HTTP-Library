@@ -1,3 +1,13 @@
+/**
+ * EasyHttp Library
+ * Custom Javascript Library For Making HTTP Requests
+ * 
+ * @version 1.0.0
+ * @author Abbas Salami
+ * 
+ */
+
+
 function easyHTTP(){
   this.http = new XMLHttpRequest();
 }
