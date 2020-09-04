@@ -20,6 +20,10 @@ const data = {
 
 
 // HTTP PUT Request
-http.put('https://jsonplaceholder.typicode.com/users/3', data)
-  .then(data => console.log(data))
+// http.put('https://jsonplaceholder.typicode.com/users/3', data)
+//   .then(data => console.log(data))
+//   .catch(err => console.log(err));
+
+  http.delete('https://jsonplaceholder.typicode.com/users/3')
+  .then(response => console.log(response))
   .catch(err => console.log(err));
