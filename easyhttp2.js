@@ -10,61 +10,62 @@
  class EasyHttp{
 
   // HTTP GET Requst
-  get(url){
-    return new Promise((resolve, reject) => {
-      fetch(url)
-      .then(res => res.json())
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    });    
+  async get(url){
+    const response =  await fetch(url);
+    
+    const respData = await response.json();
+
+    return respData;
   }
 
   // HTTP Post Request
-  post(url, data){
-    return new Promise((resolve, reject) => {
-      fetch(url, { 
+  async post(url, data){
+    
+      const response = await fetch(url, { 
         method: 'POST',
         headers: {
           'Content-type':  'application/json'
         },
         body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    });    
+      });
+
+      const respData = await response.json();
+
+      return respData;
+
   }
 
 
   // HTTP Put Request
-  put(url, data){
-    return new Promise((resolve, reject) => {
-      fetch(url, { 
+  async put(url, data){
+
+      const response = await fetch(url, { 
         method: 'PUT',
         headers: {
           'Content-type':  'application/json'
         },
         body: JSON.stringify(data)
       })
-      .then(res => res.json())
-      .then(data => resolve(data))
-      .catch(err => reject(err));
-    });    
+
+      const respData = await response.json();
+
+      return respData;
   }
 
   // HTTP Delete Reques
-  delete(url){
-    return new Promise((resolve, reject) => {
-      fetch(url, { 
-        method: 'DELETE',
-        headers: {
-          'Content-type':  'application/json'
-        }
-      })
-      .then(res => res.json())
-      .then(() => resolve("Successfully Deleted!"))
-      .catch(err => reject(err));
-    });    
+  async delete(url){
+
+    const response = await fetch(url, { 
+      method: 'DELETE',
+      headers: {
+        'Content-type':  'application/json'
+      }
+    })
+
+    const respData = await response.json();
+
+    return respData;
+ 
   }
 
 
