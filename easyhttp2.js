@@ -62,7 +62,7 @@
         }
       })
       .then(res => res.json())
-      .then(data => resolve("Successfully Deleted!"))
+      .then(() => resolve("Successfully Deleted!"))
       .catch(err => reject(err));
     });    
   }
